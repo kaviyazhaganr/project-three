@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+
+    <link rel="stylesheet" href="lib/css/all.min.css">
+
+    <style>
+        *,
+        ::before,
+        ::after {
+
+            margin: 0;
+            padding: 0;
+            box-sizing: 0;
+        }
+
+        @font-face {
+            font-family: fam;
+            src: url(/style/Euclid\ Circular\ B\ Light.ttf);
+        }
+
+        .container {
+            max-width: 1540px;
+            min-width: 1400px;
+            font-family: fam;
+        }
+
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            /* padding-top: 25px;
+            padding-bottom: 25px; */
+            /* border: 1px solid black; */
+            background-color: black;
+            color: white;
+
+        }
+
+        .list>li {
+
+            display: inline-block;
+            padding-inline: 25px;
+            padding-block: 25px;
+            /* border: 1px solid red; */
+            position: relative;
+
+
+        }
+
+        .list a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .list>li:hover {
+            background-color: grey;
+        }
+
+        .list>li:hover .list_sub {
+            display: block;
+        }
+
+        .list_sub {
+
+            list-style-type: none;
+            /* border: 1px solid red; */
+            position: absolute;
+            display: none;
+            top: 100%;
+            left: 0;
+
+
+        }
+
+        .list_sub li {
+            padding-left: 46px;
+            padding-right: 35px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgb(87, 84, 84);
+        }
+
+
+        .list li:nth-child(5)::after {
+            content: "\f0d7";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+
+        }
+
+
+
+        .sub__menu-symbol a {
+            /* border: 1px solid red; */
+            text-decoration: none;
+            padding: 25px 20px;
+            color: white;
+            align-self: center;
+            display: block;
+
+
+        }
+
+        .sub__menu-symbol a::before {
+            content: "\f002";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+        }
+
+        .sub__menu-symbol a:hover {
+            background-color: red;
+        }
+
+        .form {
+            display: inline;
+            padding-left: 10px;
+
+        }
+
+        #form {
+            width: 20px;
+            background-color: black;
+            color: white;
+            border: 0;
+
+
+        }
+
+        .background {
+
+            background-image: url(/tour/losangels.jpg);
+            height: 550px;
+
+            line-height: 30px;
+            color: white;
+
+
+        }
+
+        .background_content {
+            padding-top: 450px;
+            text-align: center;
+        }
+
+        .brand__container {
+            display: flex;
+
+            justify-content: center
+        }
+
+        .brand {
+            width: 70%;
+            /* margin: 70px 310px; */
+            /* border: 1px solid red; */
+            margin-top: 70px;
+            margin-bottom: 70px;
+
+        }
+
+        .brand__head,
+        .brand__content {
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .brand__head {
+            letter-spacing: 3px;
+
+        }
+
+        .brand__content {
+            color: grey;
+            font-style: italic;
+        }
+
+        .brand__para {
+            text-align: justify;
+            line-height: 25px;
+            padding: 10px;
+        }
+
+        .image {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 60px;
+
+
+        }
+
+        .image__content {
+            /* border: 1px solid black; */
+
+            width: 250px;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .image__content:hover {
+            background-color: lightgray;
+        }
+
+        .image__content img {
+            width: 100%;
+        }
+
+        .image__content p {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .tour {
+            background-color: black;
+            padding-top: 70px;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            /* border: 1px solid red; */
+
+        }
+
+        .tour_content {
+
+            width: 70%;
+            align-self: center;
+            /* margin-top: 70px; */
+            margin-bottom: 30px;
+            padding-top: 10px;
+            margin-top: 25px;
+            padding-bottom: 10px;
+            /* border: 1px solid red; */
+            background-color: white;
+        }
+
+        .tour p {
+            display: inline;
+            padding-left: 10px;
+
+        }
+
+        .tour a {
+
+            padding: 0px 10px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        #nove {
+
+            border-radius: 50%;
+            padding-left: 5px;
+            padding-right: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            justify-content: end;
+            margin-right: 30px;
+            font-size: 20px;
+
+        }
+
+        .November {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .image_container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            /* border: 1px solid brown; */
+            width: 70%;
+            align-self: center;
+            /* margin: 0px 310px; */
+            /* border: 1px solid red; */
+            background-color: black;
+            margin-bottom: 10px;
+
+        }
+
+        .tour__image {
+            width: 280px;
+            /* border: 1px solid brown; */
+            background-color: white;
+
+        }
+
+        .tour__image img {
+            width: 100%;
+        }
+
+        .tour__image img:hover {
+            opacity: 0.60;
+        }
+
+        /* .tour__image-sub h3{
+            line-height: 35px;
+        } */
+
+        .tour__image-sub {
+            padding: 15px;
+            /* border: 1px solid red; */
+            line-height: 40px;
+        }
+
+        #tour__image-sub-para {
+
+            /* border: 1px solid black; */
+            line-height: 24px;
+            padding-left: 0;
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tour__image-sub a {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .tour__image-sub a:hover {
+            background-color: grey;
+            color: black;
+        }
+
+        .contact {
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact_content {
+            width: 70%;
+            /* margin: 70px 310px; */
+            margin-top: 90px;
+            margin-bottom: 90px;
+            /* border: 1px solid black;  */
+        }
+
+        .contact_content_sub {
+            display: flex;
+            margin-top: 25px;
+
+        }
+
+        .flex {
+            flex: 1 1 43%;
+        }
+
+        .contact_content_sub-li li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        .contact_content_sub-li li:nth-child(1)::before {
+            content: "\f3c5";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            padding-right: 10px;
+            padding-left: 10px;
+
+
+        }
+
+        .contact_content_sub-li li:nth-child(2)::before {
+            content: "\f095";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            padding-right: 10px;
+            padding-left: 10px;
+
+        }
+
+        .contact_content_sub-li li:nth-child(3)::before {
+            content: "\f0e0";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+            padding-right: 10px;
+            padding-left: 10px;
+
+        }
+
+
+
+
+        .Form1 {
+            padding-left: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+
+        }
+
+        #Form1 {
+            padding-right: 215px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+
+        }
+
+        #Form1 img {
+            width: 10px;
+
+        }
+
+        #before::after {
+            content: "\f023";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 600;
+
+        }
+
+        .footer {
+            text-align: center;
+            padding-bottom: 50px;
+            padding-top: 40px;
+        }
+
+        .fa-brands {
+            width: 30px;
+            height: 10px;
+            text-align: center;
+            /* border: 1px solid black; */
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: grey;
+        }
+
+        @media screen and (max-width:1024px) {
+
+            .menu {
+                background-color: brown;
+            }
+
+            .brand__para {
+                padding: 50px;
+                padding-bottom: 30px;
+                width: 70%;
+                margin-left: 100px;
+            }
+
+            .image {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                color: 30px;
+                margin-top: 60px;
+            }
+
+            .tour_content {
+
+                width: 55%;
+            }
+
+            .image_container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                width: 70%;
+                column-gap: 120px;
+                row-gap: 20px;
+                /* border: 1px solid red; */
+            }
+
+            .contact_content_sub {
+
+
+                flex-direction: column;
+            }
+
+            .contact_content_sub-li,
+            .contact_content_sub-form {
+                align-self: center;
+            }
+
+
+        }
+
+        @media screen and (max-width:766px) {
+
+
+
+            .container {
+                width: 766px;
+            }
+
+            .menu {
+                background-color: red;
+
+            }
+
+            .image {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 60px;
+            }
+
+            .image__content {
+                align-self: center;
+            }
+
+            .image_container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center
+            }
+
+            .tour__image {
+                align-self: center;
+            }
+
+            .contact_content_sub {
+
+
+                flex-direction: column;
+            }
+
+            .contact_content_sub-li,
+            .contact_content_sub-form {
+                align-self: center;
+            }
+
+            .contact_content_sub-form {
+                margin-top: 20px;
+            }
+
+            .brand__para {
+                padding: 50px;
+                padding-bottom: 30px;
+                width: 50%;
+                margin-left: 180px;
+            }
+
+            .tour_content {
+
+                width: 40%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="menu">
+            <div class="sub__menu">
+
+                <!-- <a href=""> HOME</a>
+                <a href="">BAND</a>
+                <a href="">TOUR</a>
+                <a href="">CONTACT</a> -->
+
+                <ul class="list">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">BAND</a></li>
+                    <li><a href="">TOUR</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">MORE</a>
+                        <ul class="list_sub">
+                            <li>one</li>
+                            <li>two</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="sub__menu-symbol">
+                <a href=""></a>
+            </div>
+        </div>
+
+        <div class="background">
+            <div class="background_content">
+                <h3>Los Angeles</h3>
+                <p>We had the best time playing at Venice Beach!</p>
+            </div>
+        </div>
+
+        <div class="brand__container">
+            <div class="brand">
+                <h2 class="brand__head"> THE BRAND</h2>
+                <h3 class="brand__content">We love music</h3>
+                <p class="brand__para">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+
+                <div class="image">
+                    <div class="image__content">
+                        <p>Name</p>
+                        <img src="/tour/bandmember.jpg" alt="">
+                    </div>
+                    <div class="image__content">
+                        <p>Name</p>
+                        <img src="/tour/bandmember.jpg" alt="">
+                    </div>
+                    <div class="image__content">
+                        <p>Name</p>
+                        <img src="/tour/bandmember.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tour">
+
+            <h2 class="brand__head" style="color: white;"> TOUR DATES</h2>
+            <h3 class="brand__content">Remember to book your tickets!</h3>
+
+            <div class=" tour_content">
+                <p>September</p>
+                <a href="">sold out</a>
+
+                <hr style="margin-top: 10px;margin-bottom: 10px;">
+
+                <p>Octomber</p>
+                <a href="">sold out</a>
+
+                <hr style="margin-top: 10px;margin-bottom: 10px;">
+
+                <div class="November">
+
+                    <div>
+                        <p>November</p>
+                    </div>
+                    <div>
+                        <a href="" id="nove">3</a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="image_container">
+
+                <div class="tour__image">
+                    <img src="/tour/newyork.jpg" alt="">
+                    <div class="tour__image-sub">
+                        <h3>Newyork</h3>
+                        <h3>Fri 27 Nov 2016</h3>
+                        <p id="tour__image-sub-para">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+
+                        <a href="">Buy Tickets</a>
+                    </div>
+                </div>
+                <div class="tour__image">
+                    <img src="/tour/newyork.jpg" alt="">
+
+                    <div class="tour__image-sub">
+
+                        <h3>Paris</h3>
+                        <h3>Sat 28 Nov 2016</h3>
+                        <p id="tour__image-sub-para">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+
+                        <a href="">Buy Tickets</a>
+                    </div>
+
+                </div>
+                <div class="tour__image">
+                    <img src="/tour/newyork.jpg" alt="">
+                    <div class="tour__image-sub">
+
+                        <h3>San Francisco</h3>
+                        <h3>Sun 29 Nov 2016</h3>
+                        <p id="tour__image-sub-para">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+
+                        <a href="">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="contact">
+            <div class="contact_content">
+
+                <h2 class="brand__head">CONTACT</h2>
+                <h3 class="brand__content">Fan? Drop a note!</h3>
+
+                <div class="contact_content_sub">
+                    <div class="contact_content_sub-li flex">
+                        <ul>
+                            <li>Chicago, US</li>
+                            <li>Phone: +00 151515</li>
+                            <li>Email: mail@mail.com</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact_content_sub-form flex">
+                        <form action="" Class="contact-form">
+                            <label for=""></label>
+                            <input type="text" placeholder="Name" class="Form1">
+                            <label for=""></label>
+                            <input type="email" placeholder="Email" class="Form1 " id="before">
+                            <br>
+                            <label for=""></label>
+                            <input type="text" placeholder="Message" class="Form1" id="Form1">
+                            <br>
+                            <input type="submit" value="SEND"
+                                style="padding: 10px 15px; background-color: black; color: white; margin-left: 325px;">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="map">
+            <img src="/tour/map.jpg" alt="" style="margin-bottom: 20px; width: 100%;">
+        </div>
+
+
+        <footer>
+
+            <div class="footer">
+
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-snapchat"></i>
+                <i class="fa-brands fa-pinterest-p"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+
+                <p style=" margin-top: 20px; color: grey;">Powered by <u>w3.css</u></p>
+
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

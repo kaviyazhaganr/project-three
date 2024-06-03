@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0%;
+        }
+        .list > li {
+            list-style-type: none;
+            display: inline-block;
+            background-color: azure;
+            padding-inline: 20px;
+            padding-block: 25px;
+            margin-right: 10px;
+            border: 1px solid red;
+            position: relative;
+
+
+        }
+
+        .list > li:hover .list1{
+            display: block;
+        }
+
+        .list1{
+            list-style-type: none;
+            position: absolute;
+            border: 1px solid red;
+            top: 100%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div >
+        <ul class="list">
+            <li><a href="">one</a></li>
+            <li>dxvxv</li>
+            <li>one
+                <ul class="list1">
+                    <li>twodd</li>
+                    <li>threedd</li>
+                    <li>fourdddd</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
